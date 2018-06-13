@@ -10,5 +10,5 @@
     }
 </script>
 <style scoped>
-#map { height: 180px; }
+#map { height: 500px; }
 </style>
