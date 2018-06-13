@@ -23,4 +23,6 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 ## Practice list
 
 * [vue-markdown](https://github.com/Nienzu/vue-cli-example/blob/master/note/vue-markdown.md)
+* [SPA solution]()
+* [leaflet with OSM]()
 
