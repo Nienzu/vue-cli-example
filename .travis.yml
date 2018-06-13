@@ -5,6 +5,7 @@ script:
   - npm run build
 after_success:
   - mv 404.html dist
+  - mv CNAME dist
 deploy:
   provider: pages
   skip-cleanup: true
