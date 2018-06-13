@@ -16,15 +16,16 @@ new Vue({
 })
 
 // Document ready
-var map = L.map('map').setView([25.0138, 121.5413], 10);
+$(document).ready(function () {
+  var map = L.map('map').setView([25.0138, 121.5413], 10);
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
 
-for (var item in MRT_Taoyun2NTUST){
+  for (var item in MRT_Taoyun2NTUST){
 
-  L.marker(MRT_Taoyun2NTUST[item]).addTo(map)
-  .bindPopup(item)
-}
-  
+    L.marker(MRT_Taoyun2NTUST[item]).addTo(map)
+    .bindPopup(item)
+  }
+});
