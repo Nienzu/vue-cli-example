@@ -22,10 +22,13 @@ $(document).ready(function () {
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
-
+  var pointArray=[];
   for (var item in MRT_Taoyun2NTUST){
-
+    pointArray.push(MRT_Taoyun2NTUST[item])
     L.marker(MRT_Taoyun2NTUST[item]).addTo(map)
     .bindPopup(item)
   }
+  var polyline = L.polyline(pointArray, {color: 'red'}).addTo(map);
+  // zoom the map to the polyline
+  //map.fitBounds(polyline.getBounds());
 });

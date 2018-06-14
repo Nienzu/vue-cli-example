@@ -1,0 +1,1 @@
+* Only work when you use a CNAME
