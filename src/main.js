@@ -11,7 +11,9 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
-  components: { App },
+  components: {
+    App
+  },
   template: '<App/>'
 })
 
@@ -20,15 +22,25 @@ $(document).ready(function () {
   var map = L.map('map').setView([25.0138, 121.5413], 10);
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
-  var pointArray=[];
-  for (var item in MRT_Taoyun2NTUST){
+  var pointArray = [];
+  for (var item in MRT_Taoyun2NTUST) {
     pointArray.push(MRT_Taoyun2NTUST[item])
     L.marker(MRT_Taoyun2NTUST[item]).addTo(map)
-    .bindPopup(item)
+      .bindPopup(item)
   }
-  var polyline = L.polyline(pointArray, {color: 'red'}).addTo(map);
+  var polyline = L.polyline(pointArray, {
+    color: 'red'
+  }).addTo(map);
   // zoom the map to the polyline
-  //map.fitBounds(polyline.getBounds());
+  map.fitBounds(polyline.getBounds());
+
+  mapboxgl.accessToken = 'pk.eyJ1Ijoibmllbnp1IiwiYSI6ImNqaXExY3V5NDBxZHczcHQ5d290NzNkMXQifQ.snCsr5JB6YHCUmy-q9qBJA';
+  var map = new mapboxgl.Map({
+    container: 'mapid',
+    style: 'mapbox://styles/mapbox/streets-v10'
+  });
+
+
 });

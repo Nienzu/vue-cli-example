@@ -12,6 +12,14 @@
 
 ### [基礎] template 能怎麼用？
 除了當作 vue 實例內的渲染模板來使用，template 也可以當作一個包裝的 tag 來使用，不過它不會被渲染出來！
+
+
+### [觀念] 为什么在 HTML 中监听事件(Listener)?
+你可能注意到这种事件监听的方式违背了关注点分离 (separation of concern) 这个长期以来的优良传统。但不必担心，因为所有的 Vue.js 事件处理方法和表达式都严格绑定在当前视图的 ViewModel 上，它不会导致任何维护上的困难。实际上，使用 v-on 有几个好处：
+* 扫一眼 HTML 模板便能轻松定位在 JavaScript 代码里对应的方法。
+* 因为你无须在 JavaScript 里手动绑定事件，你的 ViewModel 代码可以是非常纯粹的逻辑，和 DOM 完全解耦，更易于测试。
+* 当一个 ViewModel 被销毁时，所有的事件处理器都会自动被删除。你无须担心如何自己清理它们。
+
 ### [快速連結] v-for 條件渲染
 [Link is Here!](https://cn.vuejs.org/v2/guide/list.html)
 * Array 讀取範例 `(value, index) in sth `，可以只有第一個
